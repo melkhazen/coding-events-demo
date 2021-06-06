@@ -27,6 +27,7 @@ public class Event {
     @AssertTrue(message = "registration is required")
     private Boolean registration;
 
+    @NotNull
     @Min(value = 1, message = "you need to enter a number greater then zero")
     private Integer attendees;
 
