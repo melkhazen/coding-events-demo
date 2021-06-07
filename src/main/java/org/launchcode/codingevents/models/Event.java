@@ -31,13 +31,16 @@ public class Event {
     @Min(value = 1, message = "you need to enter a number greater then zero")
     private Integer attendees;
 
-    public Event(String name, String description, String contactEmail, String eventLocation, Boolean registration, Integer attendees) {
+    private EventType type;
+
+    public Event(String name, String description, String contactEmail, String eventLocation, Boolean registration, Integer attendees, EventType type) {
         this.name = name;
         this.description = description;
         this.contactEmail = contactEmail;
         this.eventLocation = eventLocation;
         this.registration = registration;
         this.attendees = attendees;
+        this.type = type;
         this.id = nextId;
         nextId++;
     }
@@ -93,6 +96,14 @@ public class Event {
 
     public void setAttendees(Integer attendees) {
         this.attendees = attendees;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     public int getId() {
